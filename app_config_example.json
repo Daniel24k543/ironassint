@@ -1,0 +1,97 @@
+{
+  "expo": {
+    "name": "Iron Assistant - GymIA",
+    "slug": "iron-assistant-gymia",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#121212"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Iron Assistant necesita acceso a la cámara para tomar fotos de tu progreso corporal y análisis con IA.",
+        "NSPhotoLibraryUsageDescription": "Iron Assistant necesita acceso a tu galería para seleccionar fotos corporales para análisis con IA."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#121212"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Iron Assistant necesita acceso a tus fotos para el escaneo corporal con IA.",
+          "cameraPermission": "Iron Assistant necesita acceso a la cámara para tomar fotos corporales y análisis con IA."
+        }
+      ],
+      "expo-linear-gradient",
+      [
+        "react-native-ble-plx",
+        {
+          "bluetoothPeripheralPermission": "Iron Assistant usa Bluetooth para conectar con dispositivos de fitness como smartwatches.",
+          "bluetoothAlwaysPermission": "Iron Assistant usa Bluetooth para sincronizar métricas de salud en tiempo real.",
+          "modes": ["peripheral", "central"]
+        }
+      ],
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Iron Assistant usa sensores de movimiento para detectar actividad física y estado emocional."
+        }
+      ]
+    ]
+  }
+}
+
+/*
+INSTRUCCIONES DE CONFIGURACIÓN:
+
+1. COPIAR ESTE CONFIG a tu app.json existente
+   - Mantén tu configuración actual
+   - Agrega las nuevas secciones de plugins
+   - Actualiza permisos de iOS y Android
+
+2. INSTALAR DEPENDENCIAS NECESARIAS:
+   npx expo install expo-image-picker expo-linear-gradient
+
+3. VERIFICAR EXPO CONFIG:
+   npx expo doctor
+
+4. TESTEAR PERMISOS:
+   - iOS: Simulador + dispositivo real
+   - Android: Emulador + dispositivo real
+
+5. PARA DESARROLLO:
+   - Expo Go: Funcionalidades básicas
+   - Expo Dev Client: Funcionalidades nativas completas
+
+IMPORTANTE:
+- Los permisos de cámara SOLO funcionan en dispositivos reales
+- En simulador/emulador no se puede acceder a la cámara física
+- Testear siempre en dispositivo real para funcionalidad completa
+
+COMANDOS ÚTILES:
+- expo run:ios (desarrollo nativo iOS)
+- expo run:android (desarrollo nativo Android)
+- expo build:ios (build para App Store)
+- expo build:android (build para Play Store)
+*/
