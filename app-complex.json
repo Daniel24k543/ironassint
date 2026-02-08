@@ -1,0 +1,78 @@
+{
+  "expo": {
+    "name": "GymIA - Smart Fitness",
+    "slug": "gymia-smart-fitness",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "gymia",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "developmentClient": {
+      "silentLaunch": true
+    },
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a1a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "statusBarStyle": "light",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "Esta app usa Bluetooth para conectar con smartwatches y monitores de fitness",
+        "NSBluetoothPeripheralUsageDescription": "Esta app usa Bluetooth para conectar con dispositivos de fitness",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Esta app usa tu ubicación para rastrear entrenamientos y running",
+        "NSLocationWhenInUseUsageDescription": "Esta app usa tu ubicación para rastrear entrenamientos y running",
+        "NSHealthShareUsageDescription": "Esta app lee datos de salud para monitorear tu progreso de fitness",
+        "NSHealthUpdateUsageDescription": "Esta app actualiza datos de salud con tus entrenamientos",
+        "NSMotionUsageDescription": "Esta app usa sensores de movimiento para detectar ejercicios"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1a1a1a"
+      },
+      "statusBarStyle": "light",
+      "permissions": [
+        "BLUETOOTH",
+        "BLUETOOTH_ADMIN",
+        "BLUETOOTH_CONNECT",
+        "BLUETOOTH_SCAN",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "BODY_SENSORS",
+        "ACTIVITY_RECOGNITION",
+        "RECORD_AUDIO",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ],
+      "package": "com.marcx.gymiasmartfitness"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+    ],
+    "extra": {
+      "EXPO_PUBLIC_SUPABASE_URL": "https://sohgtgmrcztydhrtjmib.supabase.co",
+      "EXPO_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_vWLn0OYbbJFiGiBuAM4UwQ_egYg3TVh",
+      "EXPO_PUBLIC_API_URL": "https://ironassint-production.up.railway.app",
+      "EXPO_PUBLIC_APP_ENV": "production",
+      "router": {},
+      "eas": {
+        "projectId": "682fe961-5b0e-41cb-93aa-9a81fc705043"
+      }
+    }
+  }
+}
