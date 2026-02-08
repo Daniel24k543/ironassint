@@ -55,35 +55,20 @@
         "android.permission.BLUETOOTH",
         "android.permission.BLUETOOTH_ADMIN",
         "android.permission.BLUETOOTH_CONNECT"
-      ]
+      ],
+      "package": "com.marcx.gymiasmartfitness"
     },
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router",
-      "expo-av",
-      "expo-sensors",
-      "expo-location",
-      "expo-dev-client",
-      [
-        "react-native-ble-plx",
-        {
-          "isBackgroundEnabled": true,
-          "modes": [
-            "peripheral",
-            "central"
-          ],
-          "bluetoothAlwaysUsageDescription": "Esta app usa Bluetooth para conectar con dispositivos de fitness"
-        }
-      ]
     ],
     "extra": {
       "EXPO_PUBLIC_SUPABASE_URL": "https://sohgtgmrcztydhrtjmib.supabase.co",
       "EXPO_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_vWLn0OYbbJFiGiBuAM4UwQ_egYg3TVh",
-      "EXPO_PUBLIC_API_URL": "http://localhost:3000",
-      "EXPO_PUBLIC_APP_ENV": "development",
+      "EXPO_PUBLIC_API_URL": "https://ironassint-production.up.railway.app",
+      "EXPO_PUBLIC_APP_ENV": "production",
       "router": {},
       "eas": {
         "projectId": "682fe961-5b0e-41cb-93aa-9a81fc705043"

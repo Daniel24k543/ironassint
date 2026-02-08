@@ -1,7 +1,7 @@
 // Configuration constants for Iron Assistant
 
 export const API_CONFIG = {
-  BASE_URL: __DEV__ ? 'http://localhost:3000/api' : 'https://api.ironassistant.com/api',
+  BASE_URL: __DEV__ ? 'https://ironassint-production.up.railway.app/api' : 'https://ironassint-production.up.railway.app/api',
   TIMEOUT: 10000,
   RETRY_ATTEMPTS: 3
 };

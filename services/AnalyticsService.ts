@@ -65,7 +65,7 @@ class AnalyticsService {
   private userId: string | null = null;
 
   constructor() {
-    this.apiUrl = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:3000/api';
+    this.apiUrl = process.env.EXPO_PUBLIC_API_URL || 'https://ironassint-production.up.railway.app/api';
   }
 
   setUserId(userId: string) {

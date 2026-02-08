@@ -513,7 +513,7 @@ curl -X POST https://api.tu-dominio.com/api/auth/test \
 const config = {
   API_URL: __DEV__
     ? "http://localhost:3000/api"
-    : "https://api.tu-dominio.com/api",
+    : "https://ironassint-production.up.railway.app/api",
 
   STRIPE_PUBLISHABLE_KEY: __DEV__ ? "pk_test_..." : "pk_live_...",
 
