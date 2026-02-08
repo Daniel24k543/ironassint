@@ -1,0 +1,14 @@
+# Railway configuration for Iron Assistant Backend
+[build]
+  buildCommand = "npm install"
+  
+[deploy]
+  startCommand = "npm start"
+  restartPolicyType = "never"
+
+[environments.production]
+  NODE_ENV = "production"
+  PORT = "$PORT"
+
+# Root directory for the service
+root = "backend"
