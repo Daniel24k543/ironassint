@@ -6,13 +6,11 @@ import {
   TouchableOpacity, 
   TextInput,
   Animated,
-  Dimensions,
+  useWindowDimensions,
   KeyboardAvoidingView,
   Platform
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-
-const { width, height } = Dimensions.get('window');
 
 // ============== PANTALLA DE CARGA ==============
 const LoadingScreen = ({ message = "Iniciando Iron Assistant..." }) => {
@@ -181,8 +179,7 @@ const LoginScreen = ({ onLogin }) => {
 // ============== PANTALLA PRINCIPAL ==============
 const HomeScreen = () => {
   const handlePress = (section) => {
-    // Feedback visual
-    console.log(`Navegando a: ${section}`);
+    // Navegar a sección (implementar después)
   };
 
   return (
@@ -253,7 +250,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('Error:', error, errorInfo);
+    // Error capturado silenciosamente
   }
 
   render() {
@@ -280,27 +277,35 @@ export default function App() {
     ];
 
     let currentStep = 0;
+    const timeouts = [];
     
     const processStep = () => {
       if (currentStep < loadingSteps.length) {
         const step = loadingSteps[currentStep];
         setLoadingMessage(step.message);
         
-        setTimeout(() => {
+        const timeout1 = setTimeout(() => {
           currentStep++;
           if (currentStep < loadingSteps.length) {
             processStep();
           } else {
-            setTimeout(() => {
+            const timeout2 = setTimeout(() => {
               setIsLoading(false);
               setShowLogin(true);
             }, 500);
+            timeouts.push(timeout2);
           }
         }, step.duration);
+        timeouts.push(timeout1);
       }
     };
 
     processStep();
+
+    // Cleanup: cancelar todos los timeouts si el componente se desmonta
+    return () => {
+      timeouts.forEach(timeout => clearTimeout(timeout));
+    };
   }, []);
 
   if (isLoading) {
